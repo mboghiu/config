@@ -1,0 +1,109 @@
+# set to yes if you want Conky to be forked in the background
+background no
+
+# Use own font
+ use_xft yes
+ xftfont Bitstream Vera Sans Mono:size=10
+
+# Text alpha when using Xft
+xftalpha 0.8
+
+# MPD host/port
+# mpd_host localhost
+# mpd_port 6600
+# mpd_password tinker_bell
+
+# Print everything to console?
+# out_to_console no
+
+# Update interval in seconds
+update_interval 1
+
+# This is the number of times Conky will update before quitting.
+# Set to zero to run forever.
+total_run_times 0
+
+# Use double buffering (reduces flicker)
+double_buffer yes
+# Use own window if flickering persists
+own_window no
+# If own_window is yes, you may use type normal, desktop or override
+#own_window_type desktop
+# If own_window_transparent is set to no, you can set the background colour here
+#own_window_colour black
+# Use pseudo transparency with own_window?
+#own_window_transparent yes
+# If own_window is yes, these window manager hints may be used
+#own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+# Minimum size of text area
+#minimum_size 400 5
+
+# Draw shades?
+draw_shades no
+
+# Draw outlines?
+draw_outline no
+
+# Draw borders around text
+draw_borders no
+
+# Draw borders around graphs
+draw_graph_borders no
+
+# Stippled borders?
+stippled_borders 8
+
+# border margins
+#window.border_inner_margin 4
+
+# border width
+border_width 1
+
+# Default colors and also border colors
+default_color red
+default_outline_color black
+
+# Text alignment, other possible values are commented
+# alignment top_left
+# alignment top_right
+alignment bottom_left
+#alignment bottom_right
+# alignment none
+
+# Gap between borders of screen and text
+# same thing as passing -x at command line
+gap_x 80
+gap_y 5
+
+# Subtract file system buffers from used memory?
+no_buffers yes
+
+# set to yes if you want all text to be in uppercase
+uppercase yes
+
+# number of cpu samples to average
+# set to 1 to disable averaging
+cpu_avg_samples 2
+
+# number of net samples to average
+# set to 1 to disable averaging
+net_avg_samples 2
+
+# Force UTF8? note that UTF8 support required XFT
+override_utf8_locale no
+
+# Add spaces to keep things from moving about?  This only affects certain object
+# use_spacer right
+
+#TEXT
+#$nodename - $sysname $kernel on $machine
+#Uptime:$color $uptime - Load:$color $loadavg
+#File systems:
+# / $color${fs_used /}/${fs_size /} ${fs_bar /}
+#RAM:$color $mem/$memmax
+#RAM Usage:$color $memperc% ${membar}
+#CPU Usage:${color white} $cpu% ${cpubar}
+
+TEXT
+${execp get_xmonad_status} *** cpu: ${cpubar cpu1 5,50} ${cpubar cpu2 5,50} | mem: ${membar 5,50} | Uptime:$color ${uptime_short} | $time
