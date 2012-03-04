@@ -1,0 +1,76 @@
+# FOLDER SETTINGS
+
+set folder    = "~/Maildir"    # Common subdir for all folders
+set mbox      = "+.Read"       # Read e-mails
+set spoolfile = "~/Maildir"    # Startup folder assumed to contain all new email
+set record    = "+.Sent"       # Sent e-mails
+set postponed = "+.Drafts"     # Drafts
+
+mailboxes = +.Trash
+mailboxes = +.Tech
+mailboxes = +.Retail
+mailboxes = +.Helpdesk
+mailboxes = +.Drafts
+mailboxes = +.Inbox
+mailboxes = +.North
+mailboxes = +.Cruise
+mailboxes = +.Film
+mailboxes = +.Run
+mailboxes = +.Sent
+
+# USER DETAILS SETTINGS
+
+set from       = "maria.boghiu@orbisuk.com"
+set realname   = "Maria Boghiu"
+set sort       = reverse-date
+set sendmail   = "/usr/local/sbin/ssmtp"
+set mail_check = 60
+
+# APPEARENCE SETTINGS
+
+set pager_index_lines = 30 # Lines of idx left on screen when in pager mode
+set folder_format = "%2C %1N %-20f %s" # Folder format when in browser mode
+
+
+# MISC SETTINGS
+
+set mask = "^\.[^\.]"
+set ascii_chars
+set charset  =UTF-8
+set wait_key = no
+set query_command = "lbdbq '%s'"
+set sleep_time = 0
+set delete = yes
+set editor = "/usr/bin/vim"
+#set delete = ask-no
+
+auto_view text/html
+hdr_order Data From Subject To Cc
+ignore *
+unignore Subject
+
+# MACROS
+
+macro index,pager,browser G "!getmail \n" "Invoke getmail"
+macro index,pager c "<change-folder>?<toggle-mailboxes>" "open a different folder"
+
+# COLORS SETTINGS
+
+color hdrdefault green default
+color quoted     brightblue default
+color signature  green default
+color indicator  brightyellow green
+color error      brightgreen default
+color status     yellow blue
+color tree       magenta default     # the thread tree in the index menu
+color tilde      magenta default
+color message    brightcyan default
+color markers    brightcyan default
+color attachment brightmagenta default
+color search     default green     # how to highlight search patterns in pager
+
+color header     brightgreen default ^(From|Subject):
+color body       magenta default "(ftp|http)://[^ ]+"        # point out URLs
+color body       magenta default [-a-z_0-9.]+@[-a-z_0-9.]+   # e-mail addresses
+color underline  brightgreen default
+alias Jenna.Horwitz Jenna Horwitz <Jenna.Horwitz@OrbisUK.com#>
