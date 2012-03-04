@@ -1,0 +1,16 @@
+[options]
+verbose      = 1
+delete_after = 21
+read_all     = false
+message_log  = ~/.getmail/log
+
+[retriever]
+type     = SimplePOP3SSLRetriever
+server   = mail.orbis
+username = mboghiu
+password = M0scraciun00
+
+[destination]
+type     = MDA_external
+path     = /usr/bin/maildrop
+unixfrom = True
