@@ -1,1 +1,1 @@
-[1] a | [2] pdrive | [3] backend | [4] gui | ${color grey}[5] --${color} | ${color grey}[6] --${color} | ${color grey}[7] Logs${color} | ${color green}[8] Mail${color} | [9] Pidgin
+${color grey}[1] BUILD DEV${color} | ${color grey}[2] SYS/APP${color} | ${color grey}[3] PJSRC REF${color} | ${color grey}[4] FRONTEND${color} | ${color grey}[5] --${color} | ${color grey}[6] VM${color} | [7] Net | ${color green}[8] Mail${color} | <[9] Pidgin>

@@ -60,7 +60,7 @@ toAdd x =
   ((mod1Mask .|. controlMask, xK_Right), nextWS),
   ((mod1Mask .|. shiftMask, xK_t), withFocused(float)),
   ((mod1Mask .|. controlMask, xK_End), spawn "/etc/gdm/PostSession/Default; sudo poweroff"),
-  ((mod1Mask .|. shiftMask, xK_a), spawn "urxvt"),
+  ((mod1Mask .|. shiftMask, xK_a), spawn "gnome-terminal"),
   ((mod1Mask, xK_a), withFocused hide),
   ((mod1Mask, xK_m), goMail),
   ((0, xK_Print), spawn "scrot")
@@ -91,7 +91,7 @@ handlePidginWindows = do
 	doF (SS.shift "[9] Pidgin")
 
 handleFirefoxWindows = do
-	doF (SS.shift "Firefox")
+	doF (SS.shift "[7] Net")
 
 handleThunderbirdWindows = do
 	doF (SS.shift "[8] Mail")
@@ -141,7 +141,7 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
 ------------------------------------------------------------------------------------------------
 -- Main
 --
-myWorkspaces = ["[1] a","[2] pdrive","[3] backend","[4] gui","[5] --","[6] --","[7] Logs","[8] Mail","[9] Pidgin"]
+myWorkspaces = ["[1] BUILD DEV","[2] SYS/APP","[3] PJSRC REF","[4] FRONTEND","[5] --","[6] VM","[7] Net","[8] Mail","[9] Pidgin"]
 --readWS :: IO [String]
 --readWS = do
 --t <- readFile "~/.xmonad/conkyWS"
