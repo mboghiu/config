@@ -6,8 +6,7 @@ colorscheme rdark
 function! HighlightErrors()
 
 	highlight Error ctermbg=red ctermfg=white guibg=#d72323 guifg=white
-	" match Error /^[ \s]+\|\s\+$\|[^\t]\t\+\|\t \|\%82v.*/
-	match Error /^[ \s]+\|\s\+$\|[^\t]\t\+\|\t \*/
+	match Error /^[ \s]+\|\s\+$\|[^\t]\t\+\|\t \|\%102v.*/
 
 endfunction
 
@@ -21,6 +20,7 @@ endfunction
 
 set guioptions-=T
 set guioptions-=m
+set shiftwidth=4
 set expandtab
 set tabstop=4
 set laststatus=2
@@ -29,8 +29,8 @@ set statusline=%F%w\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 set scrolloff=5
 set ignorecase
 "Sets in-line spellchecking (including local spell check: UK)
-set spell
-setlocal spell spelllang=en_gb
+"set spell
+"setlocal spell spelllang=en_gb
 set number
 set tabstop=4
 set noeb
