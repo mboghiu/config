@@ -27,7 +27,7 @@ set laststatus=2
 "set statusline=%F%m%r%h%w\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 set statusline=%F%w\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
 set scrolloff=5
-set ignorecase
+"set ignorecase
 "Sets in-line spellchecking (including local spell check: UK)
 "set spell
 "setlocal spell spelllang=en_gb
@@ -67,3 +67,10 @@ autocmd BufRead     *.mxml set filetype=mxml
 "set grepprg=grep\ -nH\ $*
 " let g:Tex_Folding=0 "I don't like folding.
 " set iskeyword+=:
+
+" These to use CTAGS
+"" map <ctrl>+F12 to generate ctags for current folder:
+map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
+"" add current directory's generated tags file to available tags
+set tags+=./.vim/tags/flex.tags;/
+set tags+=~/.vim/tags/stl.tags

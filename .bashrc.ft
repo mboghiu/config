@@ -4,7 +4,7 @@
 
 # set PATH so it includes user's private bin if it exists
 if [ -d /home/mboghiu/bin ] ; then
-	PATH=/home/mboghiu/bin:"${PATH}"
+	PATH=/home/mboghiu/bin:/home/mboghiu/Scripts/binORB:"${PATH}"
 fi
 
 # If not running interactively, don't do anything
@@ -68,8 +68,8 @@ eval "`dircolors -b`"
 	# base
 	#-----------------
 
-	alias l='ls -lhX --color=always'
-	alias ll='ls -lhXa --color=always'
+	alias l='ls -l --color=always'
+	alias ll='ls -la --color=always'
 
 	#-----------------
 	# getting places
@@ -78,7 +78,7 @@ eval "`dircolors -b`"
     alias ...='cd ../..'
 
     alias g='cd /home/mboghiu/Documents'
-    alias mysrc='cd /home/mboghiu/workspace'
+    alias mysrc='cd /home/mboghiu/workspace/TestProxyMe/src'
     alias pjsrc='cd /mnt/build_share/workspace/Rel-11-1-0'
     alias bld='ssh mboghiu@build-centos5-64'
 
