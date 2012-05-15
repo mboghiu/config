@@ -1,4 +1,4 @@
-colorscheme rdark
+colorscheme tango
 
 "
 " Highlight errors
@@ -74,3 +74,10 @@ map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
 "" add current directory's generated tags file to available tags
 set tags+=./.vim/tags/flex.tags;/
 set tags+=~/.vim/tags/stl.tags
+
+" Ben's vim stuff
+inoremap jj <Esc>
+set timeoutlen=250
+set cursorline
+
+au! BufWritePost .vimrc source %
