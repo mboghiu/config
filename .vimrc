@@ -45,7 +45,8 @@ nnoremap <F6> :WMToggle <CR>
 
 " Theme settings
 syntax enable
-"syn off
+"set syntax=cpp11
+au BufNewFile,BufRead *.cpp set syntax=cpp11
 
 " Window navigation
 map <C-K> :call WindowCommand('k')<CR>
@@ -74,6 +75,8 @@ map <C-F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR>
 "" add current directory's generated tags file to available tags
 set tags+=./.vim/tags/flex.tags;/
 set tags+=~/.vim/tags/stl.tags
+set tags+=~/.vim/tags/tags
+set tags+=./tags
 
 " Ben's vim stuff
 inoremap jj <Esc>

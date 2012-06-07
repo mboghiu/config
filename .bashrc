@@ -82,7 +82,7 @@ eval "`dircolors -b`"
     alias pjsrc='cd /mnt/build_share/workspace/Rel-11-1-0'
     alias ws='cd /home/mboghiu/workspace'
     alias qa='cd /mnt/build_maria_workspace'
-    alias fix='cd /mnt/build_share/workspace/Rel-11-1-0/fix40'
+    alias kk='cd /mnt/build_maria_workspace/idc'
 
 	#-----------------
 	# admin
@@ -112,12 +112,11 @@ eval "`dircolors -b`"
 	alias vmsys='ssh flexsys@maria-centos5-64'
 	alias vmapp='ssh -X flexapp@maria-centos5-64'
 
-    alias su='ssh root@ldn1-dev-rencap.london.flextrade.com'
     alias susys='ssh flexsys@ldn1-dev-rencap.london.flextrade.com'
     alias suapp='ssh -X flexapp@ldn1-dev-rencap.london.flextrade.com'
 
     alias bld='ssh mboghiu@build-centos5-64'
-    alias mybld='ssh -X mboghiu@build-maria-centos5-64'
+    alias mybld='ssh -Xt mboghiu@build-maria-centos5-64 "cd /home/mboghiu/workspace; bash"'
 
     alias pulsesys='echo -e "\033[01;31mEmail PulseDev@flextrade.com\033[0m\n"; ssh flexsys@ec-max1.hosted.flextrade.com'
 

@@ -1,10 +1,9 @@
-fbsetbg $HOME/Pictures/planets.jpg
+fbsetbg $HOME/Pictures/Planets_and_Nebula_1__by_MasPix_black.jpg
 
 guake &
 dmenu &
 trayer --edge bottom --align left --width 3 --height 10 --transparent true --tint 0x000000 &
 pidgin &
 conky &
-xscreensaver &
 xset b off
 exec xmonad
