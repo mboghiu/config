@@ -4,7 +4,7 @@
 
 # set PATH so it includes user's private bin if it exists
 if [ -d /home/mboghiu/bin ] ; then
-	PATH=/home/mboghiu/bin:/home/mboghiu/Scripts/binORB:"${PATH}"
+	PATH=/home/mboghiu/bin:/home/mboghiu/Scripts/binORB:/home/mboghiu/Eclipse:/home/mboghiu/.arcanist/arcanist/bin:"${PATH}"
 fi
 
 # If not running interactively, don't do anything
@@ -33,7 +33,8 @@ xterm-color)
 	PS1='\u@\h:\W\$:'
     ;;
 *)
-	PS1='\u@\h:\033[31m$(__git_ps1)\033[0m:\W\$:'
+	#PS1='\u@\h:\[\033[31\]m$(__git_ps1)\[\033[0m\]:\W\$:'
+    PS1='\u@\h:\[\033[31m\]$(__git_ps1)\[\033[0m\]:\W\$:'
     ;;
 esac
 
@@ -80,8 +81,8 @@ eval "`dircolors -b`"
     alias g='cd /home/mboghiu/Documents'
     alias mysrc='cd /home/mboghiu/workspace/MockFixFlex'
     alias pjsrc='cd /mnt/build_share/workspace/Rel-11-1-0'
-    alias ws='cd /home/mboghiu/workspace'
-    alias qa='cd /mnt/build_maria_workspace'
+    alias ws='cd /home/mboghiu/workspace_shared; ls -ltrh'
+    alias qa='cd /mnt/build_maria_workspace; ls -ltrh --color=always'
     alias kk='cd /mnt/build_maria_workspace/idc'
 
 	#-----------------
@@ -98,11 +99,14 @@ eval "`dircolors -b`"
 	alias tcl='rlwrap tclsh8.5'
 	alias cvsd='export CVSROOT=$CVSROOT_DEV'
 	alias cvso='export CVSROOT=$CVSROOT_OPENBET'
-	alias test='/space/retail/cruise_control/bin/cruise_control.sh B_POS_TEST_MAIN B_POS_TEST_MAIN; alias test'
     alias vall='vim -p src/*.cpp'
     alias vallt='vim -p test/*.cpp'
 
-    alias send='scp AS5_64/Test_SymAdaptor_PriceMove AS5_64/libSymAdaptor_PriceMove.so flexsys@ldn1-dev-rencap:DEV_maria'
+    alias send='scp AS5_64/libMarketAnalyticsAdaptor*.so flexsys@ldn1-dev-pulse1:market_analytics_adaptor'
+
+    alias headlessvm='vboxmanage startvm fe5be18f-9ade-45dd-9ef0-961f6f085ca8 --type headless'
+    alias xephyr='Xephyr -ac -kb -screen 1074x1889 -br -reset -terminate :1 &'
+    alias gdms='DISPLAY=:1.0 gnome-session --session=2d-gnome'
 
 	#------------------------
 	# connecting to machines
@@ -115,10 +119,29 @@ eval "`dircolors -b`"
     alias susys='ssh flexsys@ldn1-dev-rencap.london.flextrade.com'
     alias suapp='ssh -X flexapp@ldn1-dev-rencap.london.flextrade.com'
 
-    alias bld='ssh mboghiu@build-centos5-64'
-    alias mybld='ssh -Xt mboghiu@build-maria-centos5-64 "cd /home/mboghiu/workspace; bash"'
+    alias pflexsys='ssh flexsys@ldn1-dev-pulse1'
+    alias pflexapp='ssh -X flexapp@ldn1-dev-pulse1'
+    alias poptsys='ssh optsys@ldn1-dev-pulse1'
+    alias pmaxxsys='ssh maxxsys@ldn1-dev-pulse1'
+    alias pdevapp='ssh -X devapp@ldn1-dev-pulse1'
 
-    alias pulsesys='echo -e "\033[01;31mEmail PulseDev@flextrade.com\033[0m\n"; ssh flexsys@ec-max1.hosted.flextrade.com'
+    alias pflexsys2='ssh flexsys@ldn1-dev-pulse2'
+    alias pflexapp2='ssh -X flexapp@ldn1-dev-pulse2'
+    alias poptsys2='ssh optsys@ldn1-dev-pulse2'
+    alias pmaxxsys2='ssh maxxsys@ldn1-dev-pulse2'
+    alias pdevapp2='ssh -X devapp@ldn1-dev-pulse2'
+
+    alias pflexsys3='ssh flexsys@ldn1-dev-pulse3'
+    alias pflexapp3='ssh -X flexapp@ldn1-dev-pulse3'
+    alias poptsys3='ssh optsys@ldn1-dev-pulse3'
+    alias pmaxxsys3='ssh maxxsys@ldn1-dev-pulse3'
+    alias pdevapp3='ssh -X devapp@ldn1-dev-pulse3'
+
+    alias bld='ssh mboghiu@build-centos5-64'
+    alias mybld='ssh -Xt mboghiu@10.2.67.58 "cd /home/mboghiu/workspace; bash"'
+
+    alias ecmaxflex='echo -e "\033[31mflexsys@ec-max1:\033[0m"; ssh flexsys@ec-max1.hosted.flextrade.com'
+    alias ecmaxopt='echo -e "\033[31m@optsys@ec-max1:\033[0m"; ssh optsys@ec-max1.hosted.flextrade.com'
 
 	#-----------------
 	# misc/temp
@@ -144,3 +167,4 @@ export PLATFORM='AS5_64'
 export BIN='/home/mboghiu/Documents/workspace'
 export REPOSITORY='/mnt/build_share/repository'
 export THIRDPARTY='/mnt/build_share/sherman/home/thirdparty'
+export _JAVA_AWT_WM_NONREPARENTING=1

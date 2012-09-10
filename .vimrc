@@ -1,4 +1,4 @@
-colorscheme tango
+colorscheme impact
 
 "
 " Highlight errors
@@ -32,13 +32,13 @@ set scrolloff=5
 "set spell
 "setlocal spell spelllang=en_gb
 set number
-set tabstop=4
 set noeb
 set hlsearch
 set incsearch
 set autoindent
 set bg=dark
 set mouse=v
+set tabpagemax=50
 
 " F6 to open WinManager Explorer
 nnoremap <F6> :WMToggle <CR>
@@ -83,4 +83,4 @@ inoremap jj <Esc>
 set timeoutlen=250
 set cursorline
 
-au! BufWritePost .vimrc source %
+"au! BufWritePost .vimrc source %

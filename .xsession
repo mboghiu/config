@@ -1,4 +1,4 @@
-fbsetbg $HOME/Pictures/Planets_and_Nebula_1__by_MasPix_black.jpg
+fbsetbg $HOME/Downloads/Pictures/Planets_and_Nebula_1__by_MasPix_black.jpg
 
 guake &
 dmenu &
