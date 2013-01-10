@@ -106,7 +106,7 @@ alias poptsys3='ssh optsys@ldn1-dev-pulse3'
 alias pmaxxsys3='ssh maxxsys@ldn1-dev-pulse3'
 alias pdevapp3='ssh -X devapp@ldn1-dev-pulse3'
 
-alias bld='sudo chroot ~/vm-chroot'
+alias bld='sudo chroot ~/vm-chroot /bin/bash -c "su - mboghiu"'
 
 #-----------------
 # misc/temp
