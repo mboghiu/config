@@ -5,10 +5,10 @@ read_all     = false
 message_log  = ~/.getmail/log
 
 [retriever]
-type     = SimplePOP3SSLRetriever
-server   = mail.orbis
-username = mboghiu
-password = M0scraciun00
+type     = SimpleIMAPSSLRetriever
+server   = 
+username = 
+password = 
 
 [destination]
 type     = MDA_external
