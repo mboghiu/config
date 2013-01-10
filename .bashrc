@@ -27,14 +27,19 @@ if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
    debian_chroot=$(cat /etc/debian_chroot)
 fi
 
+# Define GIT PS1
+__my_git_ps1 ()
+{
+    local b="$(git symbolic-ref HEAD 2>/dev/null)";
+    if [ -n "$b" ]; then
+        printf ":(%s)" "${b##refs/heads/}";
+    fi
+}
+
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-xterm-color)
-	PS1='\u@\h:\W\$:'
-    ;;
 *)
-	#PS1='\u@\h:\[\033[31\]m$(__git_ps1)\[\033[0m\]:\W\$:'
-    PS1='\u@\h:\[\033[31m\]$(__git_ps1)\[\033[0m\]:\W\$:'
+    PS1='\[\033[1;37m\]\u:lpc\[\033[0m\]\[\033[32m\]$(__my_git_ps1)\[\033[0m\]:\W\$:'
     ;;
 esac
 
@@ -69,21 +74,18 @@ eval "`dircolors -b`"
 	# base
 	#-----------------
 
-	alias l='ls -l --color=always'
-	alias ll='ls -la --color=always'
+    alias rm='rm -I'
+	alias l='ls -lh --color=always'
+	alias ll='ls -hla --color=always'
+    alias ls='ls -h --color=always'
+    alias grep='grep -n --color'
 
 	#-----------------
 	# getting places
 	#-----------------
     alias ..='cd ..'
     alias ...='cd ../..'
-
-    alias g='cd /home/mboghiu/Documents'
-    alias mysrc='cd /home/mboghiu/workspace/MockFixFlex'
-    alias pjsrc='cd /mnt/build_share/workspace/Rel-11-1-0'
-    alias ws='cd /home/mboghiu/workspace_shared; ls -ltrh'
-    alias qa='cd /mnt/build_maria_workspace; ls -ltrh --color=always'
-    alias kk='cd /mnt/build_maria_workspace/idc'
+    alias qa='cd ~/workspace; ls -ltrh --color=always'
 
 	#-----------------
 	# admin
@@ -137,8 +139,7 @@ eval "`dircolors -b`"
     alias pmaxxsys3='ssh maxxsys@ldn1-dev-pulse3'
     alias pdevapp3='ssh -X devapp@ldn1-dev-pulse3'
 
-    alias bld='ssh mboghiu@build-centos5-64'
-    alias mybld='ssh -Xt mboghiu@10.2.67.58 "cd /home/mboghiu/workspace; bash"'
+    alias bld='sudo chroot ~/vm-chroot'
 
     alias ecmaxflex='echo -e "\033[31mflexsys@ec-max1:\033[0m"; ssh flexsys@ec-max1.hosted.flextrade.com'
     alias ecmaxopt='echo -e "\033[31m@optsys@ec-max1:\033[0m"; ssh optsys@ec-max1.hosted.flextrade.com'
@@ -162,9 +163,20 @@ export CVSEDITOR=vim
 
 # My vars
 export VM='maria-centos5-64'
-export PROJECTS_HOME='/mnt/build_share/workspace/Rel-11-1-0'
 export PLATFORM='AS5_64'
 export BIN='/home/mboghiu/Documents/workspace'
 export REPOSITORY='/mnt/build_share/repository'
 export THIRDPARTY='/mnt/build_share/sherman/home/thirdparty'
 export _JAVA_AWT_WM_NONREPARENTING=1
+export MAIL='~/Maildir'
+
+
+export DEPTOOL='/mnt/build_share/repository/deptool'
+export REPO_PATH='/mnt/build_maria_workspace/LOCAL_REPO:/mnt/build_share/repository/'
+export CLASSIFIER='AS5_64-debug'
+export LD_LIBRARY_PATH=''
+
+export vmid="fe5be18f-9ade-45dd-9ef0-961f6f085ca8"
+# awesome: vim -p `grep -r "Exceptions" src/ | sed 's/:.*//'`
+
+wmname LG3D
