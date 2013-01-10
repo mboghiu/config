@@ -7,6 +7,7 @@ export HISTCONTROL=ignoreboth
 export PRINTER=xerox
 export EDITOR=vim
 export CVSEDITOR=vim
+export CVSROOT=':pserver:mboghiu@mack:/cvsroot/1.0'
 
 # My vars
 export VM='maria-centos5-64'
@@ -14,17 +15,22 @@ export PLATFORM='AS5_64'
 export BIN='/home/mboghiu/Documents/workspace'
 export REPOSITORY='/mnt/build_share/repository'
 export THIRDPARTY='/mnt/build_share/sherman/home/thirdparty'
+export LD_LIBRARY_PATH=""
 export _JAVA_AWT_WM_NONREPARENTING=1
 export MAIL='~/Maildir'
 
 
 export DEPTOOL='/mnt/build_share/repository/deptool'
-export REPO_PATH='/mnt/build_maria_workspace/LOCAL_REPO:/mnt/build_share/repository/'
+export LOCAL_REPO='/home/mboghiu/workspace/LOCAL_REPO'
+export REPO_PATH="${LOCAL_REPO}:/mnt/build_share/repository/"
 export CLASSIFIER='AS5_64-debug'
 export LD_LIBRARY_PATH=''
 
-export vmid="fe5be18f-9ade-45dd-9ef0-961f6f085ca8"
+export CMAKE='/mnt/build_share/sherman/home/thirdparty/cmake/cmake-2.8.4-Linux-i386/bin/cmake'
+export OPTIMIZE='NO'
 
+export GLOG_v=3
+export GLOG_logtostderr=1
 
 
 #-----------------
@@ -36,6 +42,11 @@ alias l='ls -lh --color=always'
 alias ll='ls -hla --color=always'
 alias ls='ls -h --color=always'
 alias grep='grep -n --color'
+
+alias cconfigure="$CMAKE ../CMakeLists.txt .."
+alias clean='rm -rf AS5_64/ artifact/ Makefile*'
+alias cclean='rm -rf logs/ artifact/ AS5_64/ CMakeFiles/ cmake_install.cmake Makefile CMakeCache.txt test_detail.xml'
+alias rmlocalrepo='rm -irf /home/mboghiu/workspace/LOCAL_REPO'
 
 #-----------------
 # getting places
@@ -61,9 +72,8 @@ alias cvso='export CVSROOT=$CVSROOT_OPENBET'
 alias vall='vim -p src/*.cpp'
 alias vallt='vim -p test/*.cpp'
 
-alias send='scp AS5_64/libMarketAnalyticsAdaptor*.so flexsys@ldn1-dev-pulse1:market_analytics_adaptor'
 
-alias headlessvm='vboxmanage startvm fe5be18f-9ade-45dd-9ef0-961f6f085ca8 --type headless'
+
 alias xephyr='Xephyr -ac -kb -screen 1074x1889 -br -reset -terminate :1 &'
 alias gdms='DISPLAY=:1.0 gnome-session --session=2d-gnome'
 
@@ -97,9 +107,6 @@ alias pmaxxsys3='ssh maxxsys@ldn1-dev-pulse3'
 alias pdevapp3='ssh -X devapp@ldn1-dev-pulse3'
 
 alias bld='sudo chroot ~/vm-chroot'
-
-alias ecmaxflex='echo -e "\033[31mflexsys@ec-max1:\033[0m"; ssh flexsys@ec-max1.hosted.flextrade.com'
-alias ecmaxopt='echo -e "\033[31m@optsys@ec-max1:\033[0m"; ssh optsys@ec-max1.hosted.flextrade.com'
 
 #-----------------
 # misc/temp
