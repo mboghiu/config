@@ -31,6 +31,7 @@ alias ...='cd ../..'
 #-----------------
 alias wm_conf='vim ~/.xmonad/xmonad.hs'
 alias mp='ps -ef | grep mboghiu'
+alias mi='vim ~/.i3/config'
 alias mb='vim ~/.bashrc'
 alias ww='source ~/.bashrc'
 alias vi='vim'

@@ -1,0 +1,14 @@
+core/openssh
+xorg-server xorg-server-utils xorg-xinit
+xf86-input-synaptics
+xorg-apps (xorg-xrandr, xorg-xkill)
+extra/slim
+community/i3-wm, i3lock, i3status, dmenu
+extra/xterm
+extra/git
+extra/pkgfile
+extra/ntp
+extra/vim
+extra/tree
+extra/xf86-video-ati
+gnome-terminal
