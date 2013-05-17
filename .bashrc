@@ -28,7 +28,7 @@ xterm*|rxvt*)
     PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
     ;;
 *)
-    PS1='\[\033[1;37m\]\u:lpc\[\033[0m\]\[\033[32m\]$(__my_git_ps1)\[\033[0m\]:\W\$:'
+    PS1='\[\033[1;37m\]\u:\h\[\033[0m\]\[\033[32m\]$(__my_git_ps1)\[\033[0m\]:\W\$:'
     ;;
 esac
 
@@ -51,6 +51,3 @@ fi
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
-
-# Run this command to trick Java Swing into working with XMonad
-wmname LG3D
