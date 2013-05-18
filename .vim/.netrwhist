@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/usr/share/X11/xkb/keymap'
+let g:netrw_dirhist_2='/home/me/workspace/triptic/src'
+let g:netrw_dirhist_3='/home/me/workspace/triptic/src/engine'
+let g:netrw_dirhist_4='/home/me/workspace/triptic/src/frontend'
+let g:netrw_dirhist_5='/home/me/workspace/triptic/src'

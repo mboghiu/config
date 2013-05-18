@@ -12,7 +12,9 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
 fi
 
 # exec gnome-session
-# exec startkde
 # exec startxfce4
 setxkbmap -layout "gb"
+syndaemon -t -k -i 2 -d &
+guake &
+
 exec i3

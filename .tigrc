@@ -1,0 +1,4 @@
+set author-width = 10
+
+bind generic F !git fetch
+bind generic I !@sh -c "echo -n %(commit) | xclip -selection c"
