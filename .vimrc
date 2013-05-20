@@ -33,6 +33,8 @@ set mouse=v       "a=enable mouse use; v=??
 set shiftwidth=4  "control how many columns text is indented with << and >>
 set expandtab     "turn tabs into spaces
 set tabstop=4     "how many spaces in a tab
+set shiftwidth=4
+set softtabstop=4
 set laststatus=2  "show status line 0=never, 1(default)=only for >=2 windows, 2=always
 set scrolloff=5   "how many lines you want above and below the cursor
 "set ignorecase   "case insensitive searching/replacing
@@ -64,24 +66,25 @@ set noeb            "set no error bells
 set hlsearch        "highlight search results
 set incsearch       "set incremental searches (i.e. search as you type)
 set autoindent      "turn on auto indent
-set tabpagemax=50 "tax number of tabs (default is much smaller)
+set tabpagemax=153 "tax number of tabs (default is much smaller)
 
 " F6 to open WinManager Explorer
-nnoremap <F6> :WMToggle <CR>
+" nnoremap <F6> :WMToggle <CR>
 
 " Theme settings
 syntax enable
-"set syntax=cpp11
+set syntax=cpp11
+"set foldmethod=syntax
 au BufNewFile,BufRead *.cpp set syntax=cpp11
+au BufNewFile,BufRead *.rule set syntax=cpp11
 
 "---------------------------------------------------------------------------------------
 " Window navigation
 "---------------------------------------------------------------------------------------
 
-map <C-K> :call WindowCommand('k')<CR>
-map <C-J> :call WindowCommand('j')<CR>
-map <C-H> :call WindowCommand('h')<CR>
-map <C-L> :call WindowCommand('l')<CR>
+nnoremap <C-Up> gT
+nnoremap <C-Down> gt
+
 
 "---------------------------------------------------------------------------------------
 " highlight errors when opening new buffers or windows
@@ -117,8 +120,16 @@ set tags+=~/.vim/tags/tags
 set tags+=./tags
 
 "---------------------------------------------------------------------------------------
-" Ben's vim stuff
+" Controls
 "---------------------------------------------------------------------------------------
+"nnoremap <up> <nop>
+"nnoremap <down> <nop>
+"nnoremap <left> <nop>
+"nnoremap <right> <nop>
+"inoremap <up> <nop>
+"inoremap <down> <nop>
+"inoremap <left> <nop>
+"inoremap <right> <nop>
 
 inoremap jj <Esc>
 set timeoutlen=250
