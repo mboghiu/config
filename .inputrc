@@ -6,8 +6,11 @@ set keymap vi-command
 "i": vi-insertion-mode
 "gg": beginning-of-history
 "G": end-of-history
+"\C-l": clear-screen
 set keymap vi-insert
 "jj": vi-movement-mode
+"\C-l": clear-screen
+"\e.": yank-last-arg
 "\C-w": backward-kill-word
 "\C-p": history-search-backward
 $endif
