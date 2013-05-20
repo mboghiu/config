@@ -13,14 +13,6 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
 
-# Define GIT PS1
-__my_git_ps1 ()
-{
-    local b="$(git symbolic-ref HEAD 2>/dev/null)";
-    if [ -n "$b" ]; then
-        printf ":(%s)" "${b##refs/heads/}";
-    fi
-}
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
@@ -34,8 +26,10 @@ esac
 
 # Alias definitions.
 alias ma='vim ~/.bash_aliases.sh'
+alias mf='vim ~/.bash_functions.sh'
 if [ -f ~/.bash_aliases.sh ]; then
     . ~/.bash_aliases.sh
+    . ~/.bash_functions.sh
 fi
 
 # enable color support for ls
@@ -54,3 +48,6 @@ fi
 
 # Run this command to trick Java Swing into working with XMonad
 wmname LG3D
+#fortune -s
+
+export LANG="en_GB.ISO-8859-1"

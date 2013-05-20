@@ -11,5 +11,5 @@ __my_git_ps1 ()
 # Define function to grab files captured by grep
 grepf()
 {
-    grep -r "$1" . | sed 's/:.*//' | uniq
+    grep -r "$1" $2 | grep --invert-match "^Binary.*" | sed 's/:.*//' | uniq
 }
