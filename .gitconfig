@@ -3,6 +3,7 @@
 	email = maria.boghiu@flextrade.com
 [diff]
 	tool = vimdiff
+	external = /home/mboghiu/bin/git-diff.sh
 [difftool]
 	prompt = false
 [merge]
