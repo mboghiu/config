@@ -106,4 +106,4 @@ override_utf8_locale no
 #CPU Usage:${color white} $cpu% ${cpubar}
 
 TEXT
-${execp get_xmonad_status} *** cpu: ${cpubar cpu1 5,50} ${cpubar cpu2 5,50} | mem: ${membar 5,50} | Uptime:$color ${uptime_short} | $time
+${execp cat ~/.xmonad/status.conky} *** cpu: ${cpubar cpu1 5,50} ${cpubar cpu2 5,50} | mem: ${membar 5,50} | Uptime:$color ${uptime_short} | $time
