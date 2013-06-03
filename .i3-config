@@ -29,6 +29,7 @@ bindsym Mod4+h focus left
 bindsym Mod4+j focus down
 bindsym Mod4+k focus up
 bindsym Mod4+l focus right
+bindsym Mod4+Tab focus right
 
 # alternatively, you can use the cursor keys:
 bindsym Mod4+Left focus left
