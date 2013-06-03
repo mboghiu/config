@@ -17,20 +17,21 @@ URxvt*color13: #cf9ebe
 URxvt*color14: #71bebe
 URxvt*color15: #ffffff
 
-URxvt*transparent:        true
-URxvt*shading:            30
-URxvt*scrollBar:          true
-URxvt*scrollBar_right:    true
+Xft*dpi:                  96
+Xft*antialias:            true
+Xft*hinting:              full
+urxvt*background:         rgba:0000/0000/0000/cccc
+URxvt.transparent:        true
+URxvt.shading:            30
+URxvt*scrollBar:          false
+URxvt*scrollBar_right:    false
 URxvt*scrollBar_floating: false
 URxvt*troughColor:        #000000
 URxvt*scrollColor:        #B20000
-
 
 URxvt*transpscrollbar:    true
 URxvt*saveLines:          32767
 URxvt*fading:             15
 URxvt*scrollstyle:        plain
-
-
 
 URxvt*font: xft:Monospace:pixelsize=12
