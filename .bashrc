@@ -1,6 +1,6 @@
 # Set PATH to include user's bin if it exists
-if [ -d /home/mboghiu/bin ] ; then
-	PATH=/home/mboghiu/bin:/home/mboghiu/Eclipse:/home/mboghiu/.arcanist/arcanist/bin:"${PATH}"
+if [ -d /home/me/bin ] ; then
+	PATH=/home/me/bin:"${PATH}"
 fi
 
 # If not running interactively, don't do anything
