@@ -5,7 +5,7 @@
 	editor = vim
 [diff]
 	tool = vimdiff
-	external = /home/mboghiu/bin/git-diff.sh
+	external = /home/me/bin/git-diff.sh
 [difftool]
 	prompt = false
 [merge]

@@ -17,7 +17,7 @@ shopt -s checkwinsize
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
 xterm*|rxvt*)
-    PS1='\[\033[1;37m\]\u:lpc\[\033[0m\]\[\033[32m\]$(__my_git_ps1)\[\033[0m\]:\W\$:'
+    PS1='\[\033[1;37m\]\u:mercury\[\033[0m\]\[\033[32m\]$(__my_git_ps1)\[\033[0m\]:\W\$:'
     xset -b
     PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD/$HOME/~}\007"'
     ;;
