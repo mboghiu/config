@@ -29,7 +29,7 @@ bindsym Mod4+h focus left
 bindsym Mod4+j focus down
 bindsym Mod4+k focus up
 bindsym Mod4+l focus right
-bindsym Mod4+Tab focus right
+bindsym Mod4+Tab focus down
 
 # alternatively, you can use the cursor keys:
 bindsym Mod4+Left focus left
@@ -38,10 +38,10 @@ bindsym Mod4+Up focus up
 bindsym Mod4+Right focus right
 
 # move focused window
-bindsym Mod4+Shift+j move left
-bindsym Mod4+Shift+k move down
-bindsym Mod4+Shift+l move up
-bindsym Mod4+Shift+semicolon move right
+bindsym Mod4+Shift+j move down
+bindsym Mod4+Shift+k move up
+bindsym Mod4+Shift+l move right
+bindsym Mod4+Shift+h move left
 
 # alternatively, you can use the cursor keys:
 bindsym Mod4+Shift+Left move left
@@ -140,8 +140,6 @@ bar {
 
 force_xinerama yes
 focus_follows_mouse no
-
-exec /usr/bin/keepassx
 
 for_window [class="Meld"] floating enable
 for_window [class="Guake"] floating enable
