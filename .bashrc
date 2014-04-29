@@ -1,6 +1,6 @@
 # Set PATH to include user's bin if it exists
 if [ -d /home/me/bin ] ; then
-	PATH=/home/me/bin:"${PATH}"
+	PATH=:/sbin:/home/me/bin:"${PATH}"
 fi
 
 # If not running interactively, don't do anything
@@ -50,4 +50,4 @@ if [ -f /etc/bash_completion ]; then
 fi
 
 #fortune -s
-export LANG="en_GB.ISO-8859-1"
+export LANG="en_GB.UTF-8"

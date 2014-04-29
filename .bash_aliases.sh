@@ -20,6 +20,7 @@ alias ls='ls -h --color=always'
 alias grep='grep -n --color'
 alias cconfigure="$CMAKE ../CMakeLists.txt .."
 alias cclean='rm -rf logs/ artifact/ AS5_64/ CMakeFiles/ cmake_install.cmake Makefile CMakeCache.txt test_detail.xml'
+alias run='build/debug/tree'
 
 #-----------------
 # getting places
