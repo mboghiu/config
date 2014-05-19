@@ -1,4 +1,6 @@
 .xmonad/status.conky
 .xmonad/xmonad-x86_64-linux
 .xmonad/xmonad.o
+.xmonad/xmonad.errors
+.xmonad/xmonad.hi
 .vim/.netrwhist
