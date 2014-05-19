@@ -2,8 +2,8 @@
 background no
 
 # Use own font
- use_xft yes
- xftfont Bitstream Vera Sans Mono:size=10
+use_xft yes
+xftfont Bitstream Vera Sans Mono:size=9
 
 # Text alpha when using Xft
 xftalpha 0.8
@@ -30,9 +30,9 @@ own_window no
 # If own_window is yes, you may use type normal, desktop or override
 #own_window_type desktop
 # If own_window_transparent is set to no, you can set the background colour here
-#own_window_colour black
+own_window_colour red
 # Use pseudo transparency with own_window?
-#own_window_transparent yes
+own_window_transparent no
 # If own_window is yes, these window manager hints may be used
 #own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 
@@ -62,14 +62,10 @@ border_width 1
 
 # Default colors and also border colors
 default_color red
-default_outline_color black
+default_outline_color red
 
 # Text alignment, other possible values are commented
-# alignment top_left
-# alignment top_right
 alignment bottom_left
-#alignment bottom_right
-# alignment none
 
 # Gap between borders of screen and text
 # same thing as passing -x at command line
@@ -106,4 +102,4 @@ override_utf8_locale no
 #CPU Usage:${color white} $cpu% ${cpubar}
 
 TEXT
-${execp cat ~/.xmonad/status.conky} *** cpu: ${cpubar cpu1 5,50} ${cpubar cpu2 5,50} | mem: ${membar 5,50} | Uptime:$color ${uptime_short} | $time
+${execp cat ~/.xmonad/status.conky} *** cpu: ${cpubar cpu1 5,50} ${cpubar cpu2 5,50} | mem: ${membar 5,50} | Uptime:$color ${uptime_short} | $time | D:$downspeed | U:$upspeed
