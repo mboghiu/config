@@ -12,6 +12,7 @@ export GLOG_logtostderr=1
 #-----------------
 # base
 #-----------------
+alias tree='tree -d -L 2'
 alias rm='rm -I'
 alias l='ls -lh --color=always'
 alias ld='ls -ld'
