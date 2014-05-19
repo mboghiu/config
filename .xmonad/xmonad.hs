@@ -26,7 +26,7 @@ import Data.List
 -- Conky
 --
 writeStatus :: String -> IO ()
-writeStatus status = writeFile "/home/mboghiu/.xmonad/status.conky" status
+writeStatus status = writeFile "/home/me/.xmonad/status.conky" status
 
 conkyColor :: String -> String -> String
 conkyColor color arg = "${color " ++ color ++ "}" ++ arg ++ "${color}"
@@ -68,10 +68,7 @@ toAdd x =
   ((mod1Mask .|. controlMask, xK_End), spawn "/etc/gdm/PostSession/Default; sudo poweroff"),
   ((mod1Mask .|. shiftMask, xK_a), spawn "gnome-terminal"),
   ((mod1Mask, xK_a), withFocused hide),
-  ((mod1Mask, xK_m), goMail),
   ((0, xK_Print), spawn "scrot")
-  --((mod1Mask, xK_h), withFocused hide),
-  --((mod1Mask, xK_v), withHidden reveal)
 	] ++
     [ ((mod1Mask, k), windows $ SS.greedyView i)
         | (i, k) <- zip myWorkspaces workspaceKeys
@@ -96,29 +93,11 @@ numPadKeys = [ xK_KP_End,  xK_KP_Down,  xK_KP_Page_Down -- 1, 2, 3
 			, xK_KP_Insert] -- 0
 
 -------------------------------------------------------------------------------------------------
--- Window Handlers
---
-handlePidginWindows = do
-	doF (SS.shift "[9] Pidgin")
-
-handleThunderbirdWindows = do
-	doF (SS.shift "[8] Mail")
-
-handleMuttWindows = do
-	doF (SS.shift "[8] Mail")
-
-goMail = do
-	windows (SS.view "[8] Mail")
-	spawn "rxvt-unicode -e mutt -y"
-
--------------------------------------------------------------------------------------------------
 -- Hooks
 --
 myManageHook = composeAll
 	[
-		className =? "OpenOffice.org 3.0"   --> doFloat,
-		className =? "Thunderbird-bin"      --> handleThunderbirdWindows,
-		className =? "Pidgin"               --> handlePidginWindows
+		resource =? "guake" --> doFloat
 	]
 
 -------------------------------------------------------------------------------------------------
@@ -139,14 +118,9 @@ myMouseBindings (XConfig {XMonad.modMask = modMask}) = M.fromList $
 ------------------------------------------------------------------------------------------------
 -- Main
 --
-myWorkspaces = ["[1] dev","[2] git","[3] bld","[4] --","[5] --","[6]--","[7] Net","[8] Mail","[9] Pidgin", "[10]", "[11]"]
---readWS :: IO [String]
---readWS = do
---t <- readFile "~/.xmonad/conkyWS"
---return (words t)
+myWorkspaces = ["[1] vim","[2] g++","[3]","[4]", "[5]","[6]","[7]"]
 
 main = do
-	--myWorkspaces <- readWS
     xmonad $
 	defaultConfig {
     manageHook         = manageDocks <+> myManageHook <+> manageHook defaultConfig,
